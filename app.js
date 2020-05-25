@@ -20,7 +20,18 @@ app.get('/', (req, res) => {
 
 
 function handleQuery(query, cb) {
-    cb('Awesome');
+    	switch(query) {
+		case "how are you?": cb("I am fine, thank you!");                                                                               break;
+		case "how are you": cb("I am fine, thank you!");                                                                                break;
+		case "hi": cb("Hey little girl! Do you have a pet?");
+			break;
+		case "yes": cb("I dont want to sound like a creep, but I think its a rabbit. But not any rabbit... No it is a cute and litte one. The color is white. Does he or she has a name? Type it in please :)");
+			break;
+		case "shiva": cb("Aww, what a nice name! You must really like her :) - The end");
+			break;
+		default: cb("Use lowercase letters only! Examples: how are you? or just hi or yes");
+			break;
+	}
 }
 
 /**
@@ -53,7 +64,7 @@ wss.on('connection', function connection(ws) {
 
   // Send welcome message on each connection
   if (ws.readyState === ws.OPEN) {
-    ws.send(JSON.stringify({type: 'connected', payload: 'Welcome!'}));
+    ws.send(JSON.stringify({type: 'connected', payload: 'Welcome! Say hi to me'}));
   }
 
   ws.on('close', function close() {
