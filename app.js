@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 
 function handleQuery(query, cb) {
-    	cb("HELLO TEST");
+    	
 	switch(query) {
 		case "how are you?": cb("I am fine, thank you!");                                                                               break;
 		case "how are you": cb("I am fine, thank you!");                                                                                break;
@@ -30,7 +30,7 @@ function handleQuery(query, cb) {
 			break;
 		case "shiva": cb("Aww, what a nice name! You must really like her :) - The end");
 			break;
-		default: cb("Use lowercase letters only! Examples: how are you? or just hi or yes");
+		default: cb("Use lowercase letters only! Start with typing \"hi\" or \"how are you\"");
 			break;
 	}
 }
