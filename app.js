@@ -20,7 +20,8 @@ app.get('/', (req, res) => {
 
 
 function handleQuery(query, cb) {
-    	switch(query) {
+    	cb("HELLO TEST");
+	switch(query) {
 		case "how are you?": cb("I am fine, thank you!");                                                                               break;
 		case "how are you": cb("I am fine, thank you!");                                                                                break;
 		case "hi": cb("Hey little girl! Do you have a pet?");
